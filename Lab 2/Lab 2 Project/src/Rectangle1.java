@@ -2,7 +2,7 @@
 //Has two contains methods
 
 /*
-javier wahn
+javier Wahn
 b00935618
  */
 public class Rectangle1{
