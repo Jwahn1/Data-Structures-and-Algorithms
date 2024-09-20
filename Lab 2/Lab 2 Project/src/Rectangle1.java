@@ -1,5 +1,10 @@
 //Rectangle class that defines a Rectangle object with xpos, ypos, width and height
 //Has two contains methods
+
+/*
+javier wahn
+b00935618
+ */
 public class Rectangle1{
     //instance variables
     private int xpos, ypos, width, height;
