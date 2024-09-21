@@ -1,3 +1,8 @@
+/*
+Javier Wahn
+B00935618
+ */
+
 public class Rectangle2 {
 
 
