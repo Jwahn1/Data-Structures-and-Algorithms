@@ -54,8 +54,8 @@ public class Rectangle2 {
         this.contains(r.getX() + r.getWidth(), r.getY()+r.getHeight()));
     }
 
-    //This method will return true if any corner or side of rectangle r touches the sides of this
-    //rectangle, but does not result in a full containment or overlap.
+        //This method will return true if any corner or side of rectangle r touches the sides of this
+        //rectangle, but does not result in a full containment or overlap.
     public boolean touches(Rectangle2 r){
         int rectTouch = 0;
 
