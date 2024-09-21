@@ -45,7 +45,7 @@ public class Rectangle2 {
     }
     //pointTouches method: returns true if the point touches the rectangle
     public boolean pointTouches(int px, int py) {
-        return (px==xpos && px==xpos+width && py==ypos && py== ypos+height);
+        return (px>=xpos && px<=xpos+width && py==ypos || py== ypos+height);
     }
     //contains method: This method will return true if all four corners of r are inside or touching this
     //rectangle.
@@ -57,46 +57,58 @@ public class Rectangle2 {
     //This method will return true if any corner or side of rectangle r touches the sides of this
     //rectangle, but does not result in a full containment or overlap.
     public boolean touches(Rectangle2 r){
-        int cornerOverlap = 0;
-        //contains() and check if r is inside this rectangle, if return true ==> return false
-        if(this.contains(r)){
-            return false;
+        int rectTouch = 0;
+
+        //if both rectangles fully overlap in the same space, all sides are touching
+        if(xpos == r.getX() && ypos == r.getY() && width == r.getWidth() && height == r.getHeight()){
+            return true;
         }
+
+        //we check if any of the four corners of r are parallel to this rectangle, if they are that means that the side
+        //must be touching
         if(this.pointTouches(r.getX(),r.getY())){
-            cornerOverlap++;
+            rectTouch++;
+        }
+        if(this.pointTouches(r.getX()+r.getWidth(),r.getY())){
+            rectTouch++;
         }
         if(this.pointTouches(r.getX()+r.getWidth(),r.getY()+r.getHeight())){
-            cornerOverlap++;
+            rectTouch++;
         }
-        if(this.pointTouches(r.getX()+r.getWidth(),r.getY()+ r.getWidth())){
-            cornerOverlap++;
+        if(this.pointTouches(r.getX(),r.getY()+ r.getHeight())){
+            rectTouch++;
         }
-        return true;
+
+        if(rectTouch >0){
+            return true;
+        }
+        return false;
+
     }
 
     //This method will return true if one or more corners of r are inside this rectangle, but
     //not all the corners (partial overlap)
     public boolean overlaps(Rectangle2 r){
         int cornerOverlap = 0;
+        //if this rectangle contains r then it cant overlap, return false
         if(this.contains(r)){
             return false;
         }
-        //call pointInside(int px, int py) (since overlap means the corner MUST be inside this.rectangle2, not touching)
-        // 4 times checking with all 4 corners, each returned true increases a counter
-        //if counter == 4 or == 0 return false, else return true
 
+        //check with all four corners if either one is inside this rectangle
         if(this.pointInside(r.getX(),r.getY())){
             cornerOverlap++;
         }
         if(this.pointInside(r.getX()+r.getWidth(),r.getY()+r.getHeight())){
             cornerOverlap++;
         }
-        if(this.pointInside(r.getX()+r.getHeight(),r.getY()+r.getHeight())){
+        if(this.pointInside(r.getX(),r.getY()+r.getHeight())){
             cornerOverlap++;
         }
-        if(this.pointInside(r.getX()+r.getWidth(),r.getY()+ r.getWidth())){
+        if(this.pointInside(r.getX()+r.getWidth(),r.getY())){
             cornerOverlap++;
         }
+        //only 1,2 or 3 corners can be overlapping at the same time, any other number returns false
         return cornerOverlap > 0 && cornerOverlap < 4;
     }
 }
