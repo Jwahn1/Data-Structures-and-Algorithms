@@ -10,12 +10,12 @@ public class Excercise1 {
         Scanner in = new Scanner(System.in);
 
         int numberOfTests= in.nextInt();
-        Rectangle1 rect1;
-        Rectangle1 rect2;
+        Rectangle2 rect1;
+        Rectangle2 rect2;
 
         while(numberOfTests >0){
-            rect1 = new Rectangle1(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
-            rect2 = new Rectangle1(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
+            rect1 = new Rectangle2(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
+            rect2 = new Rectangle2(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
 
             //printout space
             System.out.println("Rectangle 1: ("+rect1.getX()+ ", "+rect1.getY()+ ", "+rect1.getWidth()+ ", "+rect1.getHeight()+")");
