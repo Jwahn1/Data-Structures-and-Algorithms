@@ -44,6 +44,7 @@ public class demo {
 
                     break;
                 case "print":
+                    gameBoard.boardPrint();
                     break;
                 case "help":
                     System.out.println("create : [y position][x position] [fast/slow][flexible/no] [name][colour] - adds piece to board\n"+

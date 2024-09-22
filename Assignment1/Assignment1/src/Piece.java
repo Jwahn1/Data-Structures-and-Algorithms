@@ -37,10 +37,6 @@ public class Piece {
 
     @Override
     public String toString() {
-        return "Piece{" +
-                "name='" + name + '\'' +
-                ", colour='" + colour + '\'' +
-                ", position=" + Arrays.toString(position) +
-                '}';
+        return "-";
     }
 }

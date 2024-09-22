@@ -6,7 +6,7 @@ public class FastPiece extends Piece{
         this.setColour(colour);
         this.setPosition(posy,posx);
         this.setName(name);
-        this.type = "fast";
+        this.type = "F";
     }
 
     // A method to move the piece left or right by a specified number of
@@ -51,11 +51,6 @@ public class FastPiece extends Piece{
         }
     }
     public String toString() {
-        return "Piece{" +
-                "name='" + getName() + '\'' +
-                ", colour='" + getColour() + '\'' +
-                ", position=" + Arrays.toString(getPosition()) +
-                ", Type= FastPiece"+
-                '}';
+        return this.getName()+this.getColour()+this.getType();
     }
 }

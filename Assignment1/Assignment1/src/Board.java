@@ -5,8 +5,8 @@ public class Board {
         for(int i = 0; i<8 ; i++){
             for(int j = 0; j<8; j++){
                 Piece piece = new Piece();
-                piece.setPosition(j,i);
-                board[j][i] = piece;
+                piece.setPosition(i,j);
+                board[i][j] = piece;
 
             }
         }
@@ -71,5 +71,17 @@ public class Board {
         board[oldy][oldx].setPosition(oldy,oldx);
 
 
+    }
+
+    public void boardPrint(){
+        for(int i = 0; i<8 ; i++){
+            for(int j = 0; j<8 ; j++){
+                System.out.print(demo.gameBoard.getBoard()[i][j]);
+                for(int k = 0; k <15-demo.gameBoard.getBoard()[i][j].toString().length();k++){
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
     }
 }

@@ -6,7 +6,7 @@ public class SlowFlexible extends SlowPiece{
         this.setColour(colour);
         this.setPosition(posy,posx);
         this.setName(name);
-        this.type = "slowFlexible";
+        this.type = "SF";
     }
 
 

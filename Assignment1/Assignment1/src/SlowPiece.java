@@ -7,7 +7,7 @@ public class SlowPiece extends Piece{
         this.setColour(colour);
         this.setPosition(posy,posx);
         this.setName(name);
-        this.type = "slow";
+        this.type = "S";
 
     }
     //method to move the piece left or right by one space. This method will accept
