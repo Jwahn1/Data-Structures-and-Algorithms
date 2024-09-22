@@ -47,6 +47,12 @@ public class FastPiece extends Piece{
                         System.out.println("piece has reached maximum right position");
                     }
                     break;
+                case "up":
+                    System.out.println("this piece cant move in that direction");
+                    break;
+                case "down":
+                    System.out.println("this piece cant move in that direction");
+                    break;
             }
         }
     }

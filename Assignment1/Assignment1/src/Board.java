@@ -24,7 +24,7 @@ public class Board {
     //method returns true when successful, false when unsuccessful
     public boolean addPiece(int posy, int posx, String fastOrSlow, String flex, String name, String colour){
         //prevents bad input
-        if((posx >=0) && (posx <= 7) &&(posy >=0) && (posy <=7) ){
+        if((posx >=0) && (posx <= 7) &&(posy >=0) && (posy <=7) && (name.length() <=13)){
             if(isEmpty(posy,posx)){
                 switch(fastOrSlow){
                     case "fast":
@@ -36,7 +36,7 @@ public class Board {
                         board[posy][posx] = new FastPiece(name, colour, posy,posx);
                         numberOfPieces++;
                         return true;
-                    case "slow":
+                    case "":
                         if(flex.equals("flexible")){
                             board[posy][posx] = new SlowFlexible(name, colour, posy,posx);
                             numberOfPieces++;
@@ -48,13 +48,13 @@ public class Board {
                 }
                 return false;
             }
-            return true;
+            return false;
         }
-        return true;
+        return false;
     }
     //method checks whether a given space in the board is empty (empty pieces are always named "-"
     public boolean isEmpty(int posy, int posx){
-        return board[posy][posx].getName().equals("-");
+        return board[posy][posx].getName().equals("empty");
     }
 
     //method moves given piece to a new position and replaces the old space with an empty slot

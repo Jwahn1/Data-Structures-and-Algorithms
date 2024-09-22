@@ -5,43 +5,81 @@ public class demo {
 
 
         boolean gameOn = true;
-        String playerInput;
         Scanner in = new Scanner(System.in);
         //main game loop
         while(gameOn){
 
             System.out.println("Enter a command (type help for details):");
-            playerInput =in.next();
+            String command = in.nextLine();
+            String[] playerInput = command.split(" ");
             //main menu
-            switch(playerInput){
+            switch(playerInput[0]){
                 case "create":
-                    System.out.println("[y position][x position] [fast][flexible] [name][colour]");
-                    gameBoard.addPiece(in.nextInt(),in.nextInt(),in.next(),in.next(),in.next(),in.next());
+
+                    try{
+                        int posy;
+                        int posx;
+                        String fast = "";
+                        String flex = "";
+                        //get user input
+
+                        //depending on what they wrote the array would at minimum need to be of size 3 or max 5
+
+
+                        posy = Integer.parseInt(playerInput[1]);
+                        posx = Integer.parseInt(playerInput[2]);
+
+                        //variable optional inputs are handled here
+                        if(playerInput.length == 4 ) {
+                            if (playerInput[3].equals("flexible")) {
+                                flex = "flexible";
+
+                            }else{
+                                fast = "fast";
+                            }
+                        }else if(playerInput.length == 5){
+                            flex = "flexible";
+                            fast = "fast";
+                        }
+
+                        //mandatory inputs are handled here
+                        System.out.println("Name of piece?");
+                        String name = in.next();
+                        System.out.println("Color of piece?");
+                        String color = in.next();
+
+                        if(!gameBoard.addPiece(posy,posx,fast,flex,name,color)){
+                            System.out.println("piece creation failed, please retry");
+                        }
+                    }catch(Exception Wronginput){
+                        System.out.println("please input in the following format: [y position][x position] [fast][flexible] [name][colour]");
+                        System.out.println("please keep name under 13 characters");
+                    }
+
                     break;
                 case "move":
 
-                    System.out.println("[y position][x position] [left/right/up/down][# of spaces moved]");
-
-
-                    //get all user inputs first of what piece were moving and where
-                    int ypos = in.nextInt(); int xpos= in.nextInt();
-                    String direction = in.next(); int numberOfMoves = in.nextInt();
-
-                    //check if it's a slow piece first
-                    if(!gameBoard.getBoard()[ypos][xpos].getType().equals("slow") &&
-                    !gameBoard.getBoard()[ypos][xpos].getType().equals("slowFlexible") ){
-                            gameBoard.getBoard()[ypos][xpos].move(direction,numberOfMoves);
-                    }else{
-                        if(numberOfMoves == 1){
-                            gameBoard.getBoard()[ypos][xpos].move(direction);
-                        }else{
-                            System.out.println("A slow piece can't move more than once");
+                    try{
+                        //get all user inputs first of what piece were moving and where
+                        int ypos = in.nextInt(); int xpos= in.nextInt();
+                        String direction = in.next();
+                        //check if there's a piece there first
+                        if(!gameBoard.getBoard()[ypos][xpos].getName().equals("empty")){
+                            //check if it's a slow piece first
+                            if(!gameBoard.getBoard()[ypos][xpos].getType().equals("S") &&
+                                    !gameBoard.getBoard()[ypos][xpos].getType().equals("SF") ){
+                                //fast pieces are moved here
+                                int numberOfMoves = in.nextInt();
+                                gameBoard.getBoard()[ypos][xpos].move(direction,numberOfMoves);
+                            }else {
+                                //slow pieces are moved here
+                                gameBoard.getBoard()[ypos][xpos].move(direction);
+                            }
                         }
 
+                    }catch(Exception Wronginput){
+                        System.out.println("please input in the following format: [y position][x position] [left/right/up/down][# of spaces moved]");
                     }
-
-
-
                     break;
                 case "print":
                     gameBoard.boardPrint();
@@ -56,6 +94,7 @@ public class demo {
                     gameOn = false;
                     break;
             }
+            in.nextLine();
         }
     }
 }

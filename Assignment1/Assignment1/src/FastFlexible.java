@@ -74,11 +74,6 @@ public class FastFlexible extends FastPiece{
     }
 
     public String toString() {
-        return "Piece{" +
-                "name='" + getName() + '\'' +
-                ", colour='" + getColour() + '\'' +
-                ", position=" + Arrays.toString(getPosition()) +
-                ", Type= FastFlexible"+
-                '}';
+        return this.getName()+this.getColour()+this.getType();
     }
 }

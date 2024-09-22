@@ -47,15 +47,16 @@ public class SlowPiece extends Piece{
                     System.out.println("piece has reached maximum right position");
                 }
                 break;
+            case "up":
+                System.out.println("this piece cant move in that direction");
+                break;
+            case "down":
+                System.out.println("this piece cant move in that direction");
+                break;
         }
     }
 
     public String toString() {
-        return "Piece{" +
-                "name='" + getName() + '\'' +
-                ", colour='" + getColour() + '\'' +
-                ", position=" + Arrays.toString(getPosition()) +
-                ", Type= SlowPiece"+
-                '}';
+        return this.getName()+this.getColour()+this.getType();
     }
 }

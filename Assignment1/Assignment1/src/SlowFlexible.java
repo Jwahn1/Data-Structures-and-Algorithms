@@ -75,11 +75,6 @@ public class SlowFlexible extends SlowPiece{
 
     }
     public String toString() {
-        return "Piece{" +
-                "name='" + getName() + '\'' +
-                ", colour='" + getColour() + '\'' +
-                ", position=" + Arrays.toString(getPosition()) +
-                ", Type= SlowFlexible"+
-                '}';
+        return this.getName()+this.getColour()+this.getType();
     }
 }
