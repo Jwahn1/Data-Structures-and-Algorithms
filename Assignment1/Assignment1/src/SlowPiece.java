@@ -3,9 +3,9 @@ import java.util.Arrays;
 public class SlowPiece extends Piece{
 
     public SlowPiece(){}
-    public SlowPiece(String name,String colour, int posx, int posy){
+    public SlowPiece(String name,String colour, int posy, int posx){
         this.setColour(colour);
-        this.setPosition(posx,posy);
+        this.setPosition(posy,posx);
         this.setName(name);
         this.type = "slow";
 
@@ -25,6 +25,8 @@ public class SlowPiece extends Piece{
                //checks if left of the current space is empty
                    if(demo.gameBoard.isEmpty(this.getPosition()[0],this.getPosition()[1]-1)){
                        demo.gameBoard.setPiece(this,this.getPosition()[0],this.getPosition()[1]-1);
+                   }else{
+                       System.out.println("this space is occupied");
                    }
                }else{
                    System.out.println("piece is already at maximum left position");
@@ -38,6 +40,8 @@ public class SlowPiece extends Piece{
                     if(demo.gameBoard.isEmpty(this.getPosition()[0],this.getPosition()[1]+1)){
                         //here we use board.setPiece(this)
                         demo.gameBoard.setPiece(this,this.getPosition()[0],this.getPosition()[1]+1);
+                    }else{
+                        System.out.println("this space is occupied");
                     }
                 }else{
                     System.out.println("piece is already at maximum right position");

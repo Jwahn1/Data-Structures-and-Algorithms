@@ -27,7 +27,7 @@ public class Piece {
 
     public void setPosition(int posy,int posx) {
         this.position[0] = posy;
-        this.position[1] = posx ;
+        this.position[1] = posx;
     }
 
     public String getType() {return type;}

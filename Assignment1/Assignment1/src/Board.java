@@ -29,20 +29,20 @@ public class Board {
                 switch(fastOrSlow){
                     case "fast":
                         if(flex.equals("flexible")){
-                            board[posy][posx] = new FastFlexible(name, colour, posx,posy);
+                            board[posy][posx] = new FastFlexible(name, colour, posy,posx);
                             numberOfPieces++;
                             return true;
                         }
-                        board[posy][posx] = new FastPiece(name, colour, posx,posy);
+                        board[posy][posx] = new FastPiece(name, colour, posy,posx);
                         numberOfPieces++;
                         return true;
                     case "slow":
                         if(flex.equals("flexible")){
-                            board[posy][posx] = new SlowFlexible(name, colour, posx,posy);
+                            board[posy][posx] = new SlowFlexible(name, colour, posy,posx);
                             numberOfPieces++;
                             return true;
                         }
-                        board[posy][posx] = new SlowPiece(name, colour, posx,posy);
+                        board[posy][posx] = new SlowPiece(name, colour, posy,posx);
                         numberOfPieces++;
                         return true;
                 }
@@ -53,7 +53,7 @@ public class Board {
         return true;
     }
     //method checks whether a given space in the board is empty (empty pieces are always named "-"
-    public boolean isEmpty(int posx, int posy){
+    public boolean isEmpty(int posy, int posx){
         return board[posy][posx].getName().equals("-");
     }
 
