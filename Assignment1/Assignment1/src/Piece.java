@@ -25,11 +25,12 @@ public class Piece {
         this.colour = colour;
     }
 
-    public void setPosition(int posx,int posy) {
-        this.position[0] = posx;
-        this.position[1] = posy;
+    public void setPosition(int posy,int posx) {
+        this.position[0] = posy;
+        this.position[1] = posx ;
     }
-
+    public void move(String Direction){}
+    public void move(String Direction, int n){}
 
     @Override
     public String toString() {

@@ -7,7 +7,7 @@ public class FastFlexible extends FastPiece{
         this.setPosition(posx,posy);
         this.setName(name);
     }
-
+    @Override
     public void move(String direction, int directionAmount ){
         //Assume that the game board is an 8 X 8 grid. The position is a coordinate ([x, y]) on the board, with the values of x
         //and y each taking a value between 0 and 7. The top left corner of the board is taken to be the origin ([0, 0]). You can
