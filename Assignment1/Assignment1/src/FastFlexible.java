@@ -25,7 +25,7 @@ public class FastFlexible extends FastPiece{
                             System.out.println("this space is occupied");
                         }
                     } else {
-                        System.out.println("piece is already at maximum left position");
+                        System.out.println("piece has reached maximum left position");
                     }
 
                     break;
@@ -40,7 +40,7 @@ public class FastFlexible extends FastPiece{
                             System.out.println("this space is occupied");
                         }
                     } else {
-                        System.out.println("piece is already at maximum right position");
+                        System.out.println("piece has reached maximum right position");
                     }
                     break;
                 case "up":
@@ -53,7 +53,7 @@ public class FastFlexible extends FastPiece{
                             System.out.println("this space is occupied");
                         }
                     }else{
-                        System.out.println("piece is already at maximum up position");
+                        System.out.println("piece has reached maximum up position");
                     }
                     break;
                 case "down":
@@ -66,7 +66,7 @@ public class FastFlexible extends FastPiece{
                             System.out.println("this space is occupied");
                         }
                     }else{
-                        System.out.println("piece is already at maximum down position");
+                        System.out.println("piece has reached maximum down position");
                     }
                     break;
             }
