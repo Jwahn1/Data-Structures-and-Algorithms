@@ -15,23 +15,39 @@ public class demo {
             //main menu
             switch(playerInput){
                 case "create":
-                    System.out.println("[x position][y position] [fast][flexible] [name][colour]");
+                    System.out.println("[y position][x position] [fast][flexible] [name][colour]");
                     gameBoard.addPiece(in.nextInt(),in.nextInt(),in.next(),in.next(),in.next(),in.next());
                     break;
                 case "move":
-                    //[x position][y position] [left/right/up/down][# of spaces moved]
-                    //# number of spaces can be a loop, the move() function can be kept simpler that way
-                    System.out.println("[x position][y position] [left/right/up/down][# of spaces moved]");
-                    int xpos = in.nextInt(); int ypos= in.nextInt();
-                     gameBoard.getBoard()[ypos][xpos].move(in.next());
-                     in.nextInt();
+
+                    System.out.println("[y position][x position] [left/right/up/down][# of spaces moved]");
+
+
+                    //get all user inputs first of what piece were moving and where
+                    int ypos = in.nextInt(); int xpos= in.nextInt();
+                    String direction = in.next(); int numberOfMoves = in.nextInt();
+
+                    //check if it's a slow piece first
+                    if(!gameBoard.getBoard()[ypos][xpos].getType().equals("slow") &&
+                    !gameBoard.getBoard()[ypos][xpos].getType().equals("slowFlexible") ){
+                            gameBoard.getBoard()[ypos][xpos].move(direction,numberOfMoves);
+                    }else{
+                        if(numberOfMoves == 1){
+                            gameBoard.getBoard()[ypos][xpos].move(direction);
+                        }else{
+                            System.out.println("A slow piece can't move more than once");
+                        }
+
+                    }
+
+
 
                     break;
                 case "print":
                     break;
                 case "help":
-                    System.out.println("create : [x position][y position] [fast/slow][flexible/no] [name][colour] - adds piece to board\n"+
-                        "move : [x position][y position] [left/right/up/down][# of spaces moved] - moves piece to other board space\n"+
+                    System.out.println("create : [y position][x position] [fast/slow][flexible/no] [name][colour] - adds piece to board\n"+
+                        "move : [y position][x position] [left/right/up/down][# of spaces moved] - moves piece to other board space\n"+
                         "print: prints current board\n"+
                         "exit : closes program");
                     break;

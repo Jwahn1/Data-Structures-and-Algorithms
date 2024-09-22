@@ -6,6 +6,7 @@ public class FastFlexible extends FastPiece{
         this.setColour(colour);
         this.setPosition(posx,posy);
         this.setName(name);
+        this.type = "fastFlexible";
     }
     @Override
     public void move(String direction, int directionAmount ){

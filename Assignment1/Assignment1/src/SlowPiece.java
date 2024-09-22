@@ -7,6 +7,8 @@ public class SlowPiece extends Piece{
         this.setColour(colour);
         this.setPosition(posx,posy);
         this.setName(name);
+        this.type = "slow";
+
     }
     //method to move the piece left or right by one space. This method will accept
     //a direction parameter. If a move is requested that would take the Piece off the edge of the board, simply return

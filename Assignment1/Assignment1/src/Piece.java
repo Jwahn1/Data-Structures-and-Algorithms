@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Piece {
-    private String name; private String colour; private int[] position = {0,0};
+    private String name; private String colour; private int[] position = {0,0}; String type = "";
     public Piece(){name = "-";}
 
 
@@ -29,6 +29,9 @@ public class Piece {
         this.position[0] = posy;
         this.position[1] = posx ;
     }
+
+    public String getType() {return type;}
+
     public void move(String Direction){}
     public void move(String Direction, int n){}
 

@@ -6,6 +6,7 @@ public class SlowFlexible extends SlowPiece{
         this.setColour(colour);
         this.setPosition(posx,posy);
         this.setName(name);
+        this.type = "slowFlexible";
     }
 
 
@@ -37,6 +38,28 @@ public class SlowFlexible extends SlowPiece{
                     }
                 }else{
                     System.out.println("piece is already at maximum right position");
+                }
+                break;
+            case "up":
+                //checks if the piece is already near the border
+                if(this.getPosition()[0] != 0){
+                    //checks if left of the current space is empty
+                    if(demo.gameBoard.isEmpty(this.getPosition()[0]-1,this.getPosition()[1])){
+                        demo.gameBoard.setPiece(this,this.getPosition()[0]-1,this.getPosition()[1]);
+                    }
+                }else{
+                    System.out.println("piece is already at maximum up position");
+                }
+                break;
+            case "down":
+                //checks if the piece is already near the border
+                if(this.getPosition()[0] != 7){
+                    //checks if left of the current space is empty
+                    if(demo.gameBoard.isEmpty(this.getPosition()[0]+1,this.getPosition()[1])){
+                        demo.gameBoard.setPiece(this,this.getPosition()[0]+1,this.getPosition()[1]);
+                    }
+                }else{
+                    System.out.println("piece is already at maximum down position");
                 }
                 break;
         }

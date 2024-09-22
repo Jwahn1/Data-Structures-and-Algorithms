@@ -22,7 +22,7 @@ public class Board {
     //then it must check that the position given is currently empty, lastly it checks what type of piece the tester
     //wants to create, if the inputs aren't valid then nothing will be created.
     //method returns true when successful, false when unsuccessful
-    public boolean addPiece(int posx, int posy, String fastOrSlow, String flex, String name, String colour){
+    public boolean addPiece(int posy, int posx, String fastOrSlow, String flex, String name, String colour){
         //prevents bad input
         if((posx >=0) && (posx <= 7) &&(posy >=0) && (posy <=7) ){
             if(isEmpty(posy,posx)){
@@ -33,7 +33,7 @@ public class Board {
                             numberOfPieces++;
                             return true;
                         }
-                        board[posy][posx] = new SlowPiece(name, colour, posx,posy);
+                        board[posy][posx] = new FastPiece(name, colour, posx,posy);
                         numberOfPieces++;
                         return true;
                     case "slow":
