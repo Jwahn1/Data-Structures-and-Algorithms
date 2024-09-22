@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class FastFlexible extends FastPiece{
 
     public FastFlexible(String name,String colour, int posx, int posy){
@@ -12,5 +14,14 @@ public class FastFlexible extends FastPiece{
         //define Position in a separate class or use classes from the Java standard library if you wish.
 
         //A flexible Piece is one that can move up or down as well as right or left.
+    }
+
+    public String toString() {
+        return "Piece{" +
+                "name='" + getName() + '\'' +
+                ", colour='" + getColour() + '\'' +
+                ", position=" + Arrays.toString(getPosition()) +
+                ", Type= FastFlexible"+
+                '}';
     }
 }

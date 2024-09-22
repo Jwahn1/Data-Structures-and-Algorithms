@@ -27,16 +27,20 @@ public class Board {
                     case "fast":
                         if(flex.equals("flexible")){
                             board[posx][posy] = new FastFlexible(name, colour, posx,posy);
+                            numberOfPieces++;
                             return true;
                         }
                         board[posx][posy] = new SlowPiece(name, colour, posx,posy);
+                        numberOfPieces++;
                         return true;
                     case "slow":
                         if(flex.equals("flexible")){
                             board[posx][posy] = new SlowFlexible(name, colour, posx,posy);
+                            numberOfPieces++;
                             return true;
                         }
                         board[posx][posy] = new FastPiece(name, colour, posx,posy);
+                        numberOfPieces++;
                         return true;
                 }
                 return false;

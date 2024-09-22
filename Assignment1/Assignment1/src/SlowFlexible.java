@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SlowFlexible extends SlowPiece{
 
     public SlowFlexible(String name,String colour, int posx, int posy){
@@ -15,5 +17,12 @@ public class SlowFlexible extends SlowPiece{
 
         //A flexible Piece is one that can move up or down as well as right or left.
     }
-
+    public String toString() {
+        return "Piece{" +
+                "name='" + getName() + '\'' +
+                ", colour='" + getColour() + '\'' +
+                ", position=" + Arrays.toString(getPosition()) +
+                ", Type= SlowFlexible"+
+                '}';
+    }
 }
