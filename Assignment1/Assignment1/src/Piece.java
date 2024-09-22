@@ -1,11 +1,9 @@
+import java.util.Arrays;
+
 public class Piece {
-    public String name; public String colour; public int[] position;
-    public Piece(){};
-    public Piece(String name,String colour, int[] position){
-        this.name = name;
-        this.colour = colour;
-        this.position = position;
-    }
+    private String name; private String colour; private int[] position = {0,0};
+    public Piece(){name = "-";}
+
 
     public String getName() {
         return name;
@@ -27,8 +25,18 @@ public class Piece {
         this.colour = colour;
     }
 
-    //dont know yet how the position should be changed
-//    public void setPosition(int[] position) {
-//        this.position = position;
-//    }
+    public void setPosition(int posx,int posy) {
+        this.position[0] = posx;
+        this.position[1] = posy;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Piece{" +
+                "name='" + name + '\'' +
+                ", colour='" + colour + '\'' +
+                ", position=" + Arrays.toString(position) +
+                '}';
+    }
 }
