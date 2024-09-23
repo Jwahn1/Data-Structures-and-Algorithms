@@ -1,3 +1,5 @@
+//Javier Wahn
+//B00935618
 public class SlowPiece extends Piece{
 
     public SlowPiece(){}

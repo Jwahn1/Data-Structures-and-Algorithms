@@ -1,3 +1,5 @@
+//Javier Wahn
+//B00935618
 public class SlowFlexible extends SlowPiece{
 
     public SlowFlexible(String name,String colour, int posx, int posy){

@@ -1,3 +1,5 @@
+//Javier Wahn
+//B00935618
 public class Board {
     private int numberOfPieces = 0; private Piece[][] board = new Piece[8][8];
     public  Board(){

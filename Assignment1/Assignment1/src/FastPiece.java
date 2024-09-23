@@ -1,3 +1,5 @@
+//Javier Wahn
+//B00935618
 public class FastPiece extends Piece{
     public FastPiece(){}
     public FastPiece(String name,String colour, int posy,int posx){

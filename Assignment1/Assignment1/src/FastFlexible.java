@@ -1,3 +1,5 @@
+//Javier Wahn
+//B00935618
 public class FastFlexible extends FastPiece{
 
     public FastFlexible(String name,String colour, int posy, int posx){

@@ -1,5 +1,6 @@
 import java.util.Arrays;
-
+//Javier Wahn
+//B00935618
 public class Piece {
     private String name; private String colour; private int[] position = {0,0}; String type = "";
     public Piece(){name = "empty";}

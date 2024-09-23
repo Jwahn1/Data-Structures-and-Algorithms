@@ -1,3 +1,5 @@
+//Javier Wahn
+//B00935618
 import java.util.Scanner;
 public class GameDemo {
      public static  Board gameBoard = new Board();
