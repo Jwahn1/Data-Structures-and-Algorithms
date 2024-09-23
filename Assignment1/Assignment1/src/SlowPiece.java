@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class SlowPiece extends Piece{
 
     public SlowPiece(){}
@@ -23,8 +21,8 @@ public class SlowPiece extends Piece{
             //checks if the piece is already near the border
                if(this.getPosition()[1] != 0){
                //checks if left of the current space is empty
-                   if(demo.gameBoard.isEmpty(this.getPosition()[0],this.getPosition()[1]-1)){
-                       demo.gameBoard.setPiece(this,this.getPosition()[0],this.getPosition()[1]-1);
+                   if(GameDemo.gameBoard.isEmpty(this.getPosition()[0],this.getPosition()[1]-1)){
+                       GameDemo.gameBoard.setPiece(this,this.getPosition()[0],this.getPosition()[1]-1);
                    }else{
                        System.out.println("this space is occupied");
                    }
@@ -37,9 +35,9 @@ public class SlowPiece extends Piece{
                 //checks if the piece is already near the border
                 if(this.getPosition()[1] != 7){
                     //checks if left of the current space is empty
-                    if(demo.gameBoard.isEmpty(this.getPosition()[0],this.getPosition()[1]+1)){
+                    if(GameDemo.gameBoard.isEmpty(this.getPosition()[0],this.getPosition()[1]+1)){
                         //here we use board.setPiece(this)
-                        demo.gameBoard.setPiece(this,this.getPosition()[0],this.getPosition()[1]+1);
+                        GameDemo.gameBoard.setPiece(this,this.getPosition()[0],this.getPosition()[1]+1);
                     }else{
                         System.out.println("this space is occupied");
                     }

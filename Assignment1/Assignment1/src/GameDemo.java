@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class demo {
+public class GameDemo {
      public static  Board gameBoard = new Board();
     public static void main(String[] args) {
 
@@ -26,8 +26,8 @@ public class demo {
                         //depending on what they wrote the array would at minimum need to be of size 3 or max 5
 
 
-                        posy = Integer.parseInt(playerInput[1]);
-                        posx = Integer.parseInt(playerInput[2]);
+                        posx = Integer.parseInt(playerInput[1]);
+                        posy = Integer.parseInt(playerInput[2]);
 
                         //variable optional inputs are handled here
                         if(playerInput.length == 4 ) {
@@ -52,7 +52,7 @@ public class demo {
                             System.out.println("piece creation failed, please retry");
                         }
                     }catch(Exception Wronginput){
-                        System.out.println("please input in the following format: [y position][x position] [fast][flexible] [name][colour]");
+                        System.out.println("please input in the following format: [x position][y position] [fast][flexible] [name][colour]");
                         System.out.println("please keep name under 13 characters");
                     }
 
@@ -61,7 +61,7 @@ public class demo {
 
                     try{
                         //get all user inputs first of what piece were moving and where
-                        int ypos = in.nextInt(); int xpos= in.nextInt();
+                        int xpos = in.nextInt(); int ypos= in.nextInt();
                         String direction = in.next();
                         //check if there's a piece there first
                         if(!gameBoard.getBoard()[ypos][xpos].getName().equals("empty")){
@@ -78,7 +78,7 @@ public class demo {
                         }
 
                     }catch(Exception Wronginput){
-                        System.out.println("please input in the following format: [y position][x position] [left/right/up/down][# of spaces moved]");
+                        System.out.println("please input in the following format: [x position][y position] [left/right/up/down][# of spaces moved]");
                     }
                     break;
                 case "print":

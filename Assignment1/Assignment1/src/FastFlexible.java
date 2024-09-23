@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class FastFlexible extends FastPiece{
 
     public FastFlexible(String name,String colour, int posy, int posx){
@@ -19,8 +17,8 @@ public class FastFlexible extends FastPiece{
                     //checks if the piece is already near the border
                     if (this.getPosition()[1] != 0) {
                         //checks if left of the current space is empty
-                        if (demo.gameBoard.isEmpty(this.getPosition()[0], this.getPosition()[1] - 1)) {
-                            demo.gameBoard.setPiece(this, this.getPosition()[0], this.getPosition()[1] - 1);
+                        if (GameDemo.gameBoard.isEmpty(this.getPosition()[0], this.getPosition()[1] - 1)) {
+                            GameDemo.gameBoard.setPiece(this, this.getPosition()[0], this.getPosition()[1] - 1);
                         }else{
                             System.out.println("this space is occupied");
                         }
@@ -33,9 +31,9 @@ public class FastFlexible extends FastPiece{
                     //checks if the piece is already near the border
                     if (this.getPosition()[1] != 7) {
                         //checks if left of the current space is empty
-                        if (demo.gameBoard.isEmpty(this.getPosition()[0], this.getPosition()[1] + 1)) {
+                        if (GameDemo.gameBoard.isEmpty(this.getPosition()[0], this.getPosition()[1] + 1)) {
                             //here we use board.setPiece(this)
-                            demo.gameBoard.setPiece(this, this.getPosition()[0], this.getPosition()[1] + 1);
+                            GameDemo.gameBoard.setPiece(this, this.getPosition()[0], this.getPosition()[1] + 1);
                         }else{
                             System.out.println("this space is occupied");
                         }
@@ -47,8 +45,8 @@ public class FastFlexible extends FastPiece{
                     //checks if the piece is already near the border
                     if(this.getPosition()[0] != 0){
                         //checks if left of the current space is empty
-                        if(demo.gameBoard.isEmpty(this.getPosition()[0]-1,this.getPosition()[1])){
-                            demo.gameBoard.setPiece(this,this.getPosition()[0]-1,this.getPosition()[1]);
+                        if(GameDemo.gameBoard.isEmpty(this.getPosition()[0]-1,this.getPosition()[1])){
+                            GameDemo.gameBoard.setPiece(this,this.getPosition()[0]-1,this.getPosition()[1]);
                         }else{
                             System.out.println("this space is occupied");
                         }
@@ -60,8 +58,8 @@ public class FastFlexible extends FastPiece{
                     //checks if the piece is already near the border
                     if(this.getPosition()[0] != 7){
                         //checks if left of the current space is empty
-                        if(demo.gameBoard.isEmpty(this.getPosition()[0]+1,this.getPosition()[1])){
-                            demo.gameBoard.setPiece(this,this.getPosition()[0]+1,this.getPosition()[1]);
+                        if(GameDemo.gameBoard.isEmpty(this.getPosition()[0]+1,this.getPosition()[1])){
+                            GameDemo.gameBoard.setPiece(this,this.getPosition()[0]+1,this.getPosition()[1]);
                         }else{
                             System.out.println("this space is occupied");
                         }
