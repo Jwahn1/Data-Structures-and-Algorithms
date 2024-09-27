@@ -2,11 +2,6 @@ import java.lang.Math;
 import java.util.Scanner;
 public class Prime {
 
-    //maybe write a for loop that goes through every number once, checks through modular calculation if
-    //its divisible with anything but itself
-    //if yes its not prime
-    //otherwise add 1 to prime counter, if counter is equal to 11,101,1001,10001,100001 and 1000001 then we found what
-    //was requested
 
     public static void main(String[] args) {
 
