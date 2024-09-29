@@ -1,0 +1,11 @@
+1000000000 3
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at MatrixMult.main(MatrixMult.java:14)
+
+In this instance the error is being caused by java trying to allocate enough memory for a 1000000000 x 1000000000
+square matrix which exceeds the reserved memory by the garbage collector, this causes the OutOfMemoryError exception to be thrown.
+
+Source:
+GeeksforGeeks (2023) Understanding outofmemoryerror exception in Java, GeeksforGeeks.
+Available at: https://www.geeksforgeeks.org/understanding-outofmemoryerror-exception-java/ (Accessed: 29 September 2024).
+
