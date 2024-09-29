@@ -37,8 +37,9 @@ import java.util.*;
             for (i = 0; i < sizeOfMatrix; i++) {
                 for (j = 0; j < sizeOfMatrix; j++) {
                     res[i][j] = 0;
-                    for (k = 0; k < sizeOfMatrix; k++)
+                    for (k = 0; k < sizeOfMatrix; k++){
                         res[i][j] += mat1[i][k] * mat2[k][j];
+                    }
                 }
             }
             return res;
