@@ -1,3 +1,8 @@
+/*
+Javier Wahn
+B00935618
+ */
+
 import java.lang.Math;
 import java.util.Scanner;
 public class Prime {

@@ -1,3 +1,7 @@
+/*
+Javier Wahn
+B00935618
+ */
 /**
      This class tests the code for Exercise 2. It calls a method to
      multiply two square matrices of size n x n, and prints information about
