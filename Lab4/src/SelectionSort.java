@@ -1,3 +1,6 @@
+//javier wahn
+//B00935618
+
 /*
 Selection Sort
 This class tests the code for Lab4: Exercise2. It calls the sort method to
@@ -42,16 +45,34 @@ public class SelectionSort{
 
         //display the executionTIme
     }
-    public static int[] sort(int[] arr){
-        //TODO
-        //sort and return the integer arr of size n
 
+
+    //function uses selection sort to return a sorted version of the array
+    public static int[] sort(int[] arr){
+
+        int min_index =0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            // Assume the current element is the minimum
+            min_index = i;
+            // Inner loop to find the minimum element in the unsorted part of the array
+            for (int j = i+1; j < arr.length; j++) {
+                // If we find a smaller element
+                if(arr[j]<arr[min_index]){
+                    // Update min_index to the new minimum element's index
+                    min_index = j;
+                }
+            }
+            // Swap the found minimum element with the element at index i
+            swap(arr,arr[min_index],arr[i],min_index,i);
+        }
         return arr;
     }
-    //method swaps the value in [arrayPos] with the value in [ArrayPos+1] and places the value in [arrayPos] in [arrayPos+1]
-    public static int[] swap(int[] array, int smallerNum, int largerNum, int arrayPos){
-        array[arrayPos] = largerNum;
-        array[arrayPos+1] = smallerNum;
+
+
+    //method swaps the value in [arrayPos] with the value in [min_index] and vice versa
+    public static int[] swap(int[] array, int smallerNum, int largerNum,int minArrayPos,int arrayPos){
+        array[arrayPos] = smallerNum;
+        array[minArrayPos] = largerNum;
         return array;
     }
 }
