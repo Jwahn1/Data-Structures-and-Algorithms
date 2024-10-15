@@ -30,7 +30,7 @@ public class LinkedList<T>{
 		front = null;
 		count=0;
 	}
-	
+
 	//returns true if the linked list is empty
 	public boolean isEmpty(){
 		return (count==0);
