@@ -1,51 +1,61 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
+import java.io.File;
+import java.io.FileWriter;
 public class NHLListDemo {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner in = null;
+        Scanner file = new Scanner(System.in);
+
+        System.out.println("what file would you like to read");
+        File nhlstats = new File(file.next());
+        //in case the file doesnt exist
+        try {
+            in = new Scanner(nhlstats);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         NHLStats list = new NHLStats();
 
-        //create list
-        for(int i = 0 ; i < 5;i++) {
+        //create list based on provided file
+        while(in.hasNext()){
             PlayerRecord player = new PlayerRecord(in.next(), in.next(), in.next(), in.next(), in.next(), in.next(), in.next(), in.next(), in.next());
             list.add(player);
         }
 
         PlayerRecord temp = list.getFirst();
 
-        System.out.println(list.mostPoint());
-        System.out.println(list.mostAgressive());
-        System.out.println(list.MVP());
-        System.out.println(list.mostPromsing());
-        System.out.println(list.mostAggressiveTeam());
-        System.out.println(list.teamMVP());
-        //Finally, create a demo program. Call it NHLListDemo.java. It will be similar to ExpenseListDemo.java or
-        //StudentListDemo.java in your lab. Your program should accept input from a user (specifying the name of
-        //an input file) and read a file formatted like the one described (see also: nhlstats.txt). Your program should
-        //create an NHLStats Object, and demonstrate all the methods that you have developed. You will print your
-        //outputs in the following format to a file called nhlstatsoutput.txt
+        System.out.println(
+                "NHL Results Summary: \n"+
+                "player/s with highest point/s and their team/s:\n"+ list.mostPoint()+ "\n"+
+                "Most aggressive players, their teams and their positions:\n"+ list.mostAgressive()+"\n"+
+                "Most valuable players and their teams:\n"+ list.MVP()+"\n"+
+                "Most promising players and their teams\n"+ list.mostPromsing()+"\n"+
+                "Teams that had the most number of penalty minutes:\n"+ list.mostAggressiveTeam()+"\n"+
+                "Teams that had the most number of game winning goals:\n"+ list.teamMVP()+"\n"
+        );
 
-        //Enter the filename to read from: nhlstats.txt
-        //NHL Results Summary
-        //Players with highest points and their teams:
-        //*YOUR OUTPUT(S)*
-        //Most aggressive players, their teams and their positions:
-        //*YOUR OUTPUT(S)*
-        //Most valuable players and their teams:
-        //*YOUR OUTPUT(S)*
-        //Most promising players and their teams:
-        //*YOUR OUTPUT(S)*
-        //Teams that had the most number of penalty minutes:
-        //*YOUR OUTPUT(S)*
-        //Assignment 3CSCI 2110 2
-        //Teams that had the most number of game winning goals:
-        //*YOUR OUTPUT(S)*
-        //Note: When you read data from the file, each line is read as a String. Use a StringTokenizer to parse the line’s
-        //components. Also take note that the input file has rows in which the items are delimited by tabs, not spaces.
-        //Try the following when setting your delimiter:
-        //token = new StringTokenizer(line, "\t");
+        //output the last printout into a seperate file
+        File nhlOutput = new File("Docs/nhlstatsoutput.txt");
+        try {
+            FileWriter writer = new FileWriter("Docs/nhlstatsoutput.txt");
+            writer.write("NHL Results Summary: \n"+
+                    "player/s with highest point/s and their team/s:\n"+ list.mostPoint()+ "\n"+
+                    "Most aggressive players, their teams and their positions:\n"+ list.mostAgressive()+"\n"+
+                    "Most valuable players and their teams:\n"+ list.MVP()+"\n"+
+                    "Most promising players and their teams\n"+ list.mostPromsing()+"\n"+
+                    "Teams that had the most number of penalty minutes:\n"+ list.mostAggressiveTeam()+"\n"+
+                    "Teams that had the most number of game winning goals:\n"+ list.teamMVP()+"\n");
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 }
 
 
 
- */
