@@ -1,7 +1,9 @@
+import java.util.*;
 public class Excercise7 {
     public static void main(String[] args) {
-        String reverse = reverseString("hello");
-        System.out.print(reverse);
+        Scanner in = new Scanner(System.in);
+        System.out.println("Find the reverse string of ");
+        System.out.print(reverseString(in.next()));
     }
     //takes a string str and returns the string in reverse order
     public static String reverseString(String str){

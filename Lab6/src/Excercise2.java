@@ -1,6 +1,9 @@
+import java.util.*;
 public class Excercise2 {
     public static void main(String[] args) {
-        countDown(10);
+        Scanner in = new Scanner(System.in);
+        System.out.print("countown from :");
+        countDown(in.nextInt());
     }
 
     //methods prints all integers from n to 0

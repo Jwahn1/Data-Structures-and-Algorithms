@@ -1,6 +1,9 @@
+import java.util.*;
 public class Excercise4 {
     public static void main(String[] args) {
-        multiples(2,5);
+        Scanner in = new Scanner(System.in);
+        System.out.print("Show the first m multiples of n (input n, m)");
+        multiples(in.nextInt(),in.nextInt());
     }
 
     //method prints all the multiples of n from n x m to 0

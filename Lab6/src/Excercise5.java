@@ -1,6 +1,9 @@
+import java.util.*;
 public class Excercise5 {
     public static void main(String[] args) {
-        writeVertical(12);
+        Scanner in = new Scanner(System.in);
+        System.out.print("input integer to print vertically:");
+        writeVertical(in.nextInt());
     }
 
     //Takes a single positive integer n as a parameter and prints the digits of that integer vertically, one per line.

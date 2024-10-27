@@ -1,11 +1,18 @@
+import java.util.*;
 public class Excercise1 {
     public static void main(String[] args) {
 
-        System.out.println(" factorial of 5 = " + factorial(5) );
-        System.out.println(" the fibonacci sequence of 7 = " + fib(7) );
-        System.out.println(" 2^8 = " + power(2,8) );
-    }
+        Scanner in = new Scanner(System.in);
+        System.out.println("find the factorial of: " );
+        System.out.println("! = "+ factorial(in.nextInt()) );
 
+        for(int i = 0 ; i < 20; i++){
+            System.out.println(" the fibonacci sequence of "+ i +" = " + fib(i) );
+        }
+        System.out.println("calculate n^x, enter n then x: ");
+        System.out.println("n^x = "+ power(in.nextInt(),in.nextInt()) );
+
+    }
     //method returns the factorial of the given N via recursion.
     public static int  factorial(int n){
 
