@@ -1,0 +1,17 @@
+find the sum of all squares from 0 to :
+20
+2870
+
+Process finished with exit code 0
+
+find the sum of all squares from 0 to :
+80
+173880
+
+Process finished with exit code 0
+
+find the sum of all squares from 0 to :
+4
+30
+
+Process finished with exit code 0

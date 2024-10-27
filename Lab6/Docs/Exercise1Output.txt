@@ -1,0 +1,13 @@
+Factorial of a number 
+enter a positive Integer: 
+10
+the factorial of this number is 3628800
+Fibonnaci numbers
+The first 20 numbers in the Fibonacci series are
+0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,
+Power of a number 
+Enter a positive integer n and x:
+2 5
+n^x = 25
+
+Process finished with exit code 0

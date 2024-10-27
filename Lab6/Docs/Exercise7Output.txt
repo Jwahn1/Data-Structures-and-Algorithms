@@ -1,0 +1,14 @@
+Find the reverse string of
+hellow
+wolleh
+Process finished with exit code 0
+
+Find the reverse string of
+hello, world!
+!dlrow ,olleh
+Process finished with exit code 0
+
+Find the reverse string of
+Lab is finished
+dehsinif si baL
+Process finished with exit code 0

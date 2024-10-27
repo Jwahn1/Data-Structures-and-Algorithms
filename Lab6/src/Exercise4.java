@@ -1,5 +1,5 @@
 import java.util.*;
-public class Excercise4 {
+public class Exercise4 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Show the first m multiples of n (input n, m)");

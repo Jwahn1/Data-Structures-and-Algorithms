@@ -1,0 +1,11 @@
+Count how many ways you can climb a stair with x steps:4
+7
+Process finished with exit code 0
+
+Count how many ways you can climb a stair with x steps:9
+149
+Process finished with exit code 0
+
+Count how many ways you can climb a stair with x steps:20
+121415
+Process finished with exit code 0

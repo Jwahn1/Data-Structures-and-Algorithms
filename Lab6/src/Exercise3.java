@@ -1,5 +1,5 @@
 import java.util.*;
-public class Excercise3 {
+public class Exercise3 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("countown from :");

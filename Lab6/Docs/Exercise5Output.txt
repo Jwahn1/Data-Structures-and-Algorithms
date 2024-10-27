@@ -1,0 +1,32 @@
+input integer to print vertically:12345
+1
+2
+3
+4
+5
+
+Process finished with exit code 0
+
+input integer to print vertically:8989832
+8
+9
+8
+9
+8
+3
+2
+
+Process finished with exit code 0
+
+input integer to print vertically:987654321
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+Process finished with exit code 0

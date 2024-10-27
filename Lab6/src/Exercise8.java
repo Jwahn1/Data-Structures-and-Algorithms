@@ -1,5 +1,5 @@
 import java.util.*;
-public class Excercise8 {
+public class Exercise8 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Count how many ways you can climb a stair with x steps:" );

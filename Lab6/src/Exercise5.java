@@ -1,5 +1,5 @@
 import java.util.*;
-public class Excercise5 {
+public class Exercise5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("input integer to print vertically:");

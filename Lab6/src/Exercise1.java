@@ -1,15 +1,19 @@
 import java.util.*;
-public class Excercise1 {
+public class Exercise1 {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        System.out.println("find the factorial of: " );
-        System.out.println("! = "+ factorial(in.nextInt()) );
+        System.out.println("Factorial of a number " );
+        System.out.println("enter a positive Integer: " );
+        System.out.println("the factorial of this number is " + factorial(in.nextInt())  );
 
+        System.out.println("Fibonnaci numbers");
+        System.out.println("The first 20 numbers in the Fibonacci series are");
         for(int i = 0 ; i < 20; i++){
-            System.out.println(" the fibonacci sequence of "+ i +" = " + fib(i) );
+            System.out.print( fib(i) +",");
         }
-        System.out.println("calculate n^x, enter n then x: ");
+        System.out.println("\nPower of a number ");
+        System.out.println("Enter a positive integer n and x:");
         System.out.println("n^x = "+ power(in.nextInt(),in.nextInt()) );
 
     }
