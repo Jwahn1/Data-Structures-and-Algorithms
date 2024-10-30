@@ -7,18 +7,30 @@ public class BinaryTreeDemo {
 		BinaryTree<String> D = new BinaryTree<String>();
 		BinaryTree<String> E = new BinaryTree<String>();
 		BinaryTree<String> F = new BinaryTree<String>();
+		BinaryTree<String> G = new BinaryTree<String>();
+		BinaryTree<String> H = new BinaryTree<String>();
+		BinaryTree<String> I = new BinaryTree<String>();
+		BinaryTree<String> J = new BinaryTree<String>();
 		A.makeRoot("A");
 		B.makeRoot("B");
 		C.makeRoot("C");
 		D.makeRoot("D");
 		E.makeRoot("E");
 		F.makeRoot("F");
+		G.makeRoot("G");
+		H.makeRoot("H");
+		I.makeRoot("I");
+		J.makeRoot("J");
 
 		A.attachLeft(B);
 		A.attachRight(C);
 		B.attachLeft(D);
 		B.attachRight(E);
-		D.attachLeft(F);
+		C.attachLeft(F);
+		C.attachRight(G);
+		G.attachRight(H);
+		G.attachLeft(I);
+		I.attachRight(J);
 
 		// test statements
 		System.out.printf("Height of the tree is: %d\n", BinaryTree.findHeight(A));

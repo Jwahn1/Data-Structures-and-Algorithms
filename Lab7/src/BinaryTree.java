@@ -120,19 +120,35 @@ public class BinaryTree<T> {
 
 	//this method counts the number of nodes in a BinaryTree recursively
 	public static <T> int countNodes(BinaryTree<T> t){
-	//TO-DO
+
+		if(t ==null) {
+			return 0;//no nodes to count
+		}else{
+			BinaryTree<T> right = t.getRight();
+			BinaryTree<T> left = t.getLeft();
+			return 1+ countNodes(right) + countNodes(left) ;
+		}
+
 	}
 
 
 	// this method returns the height of a BinaryTree
 	public static <T> int findHeight(BinaryTree<T> t) {
-	
-	//TO-DO
+		int height = 0;
+		if(t == null){
+			return 0;
+		}else{
+			BinaryTree<T> left = t.getLeft();
+			BinaryTree<T> right = t.getRight();
+			height = 1 + Math.max(findHeight(left), findHeight(right));
+
+		}
+		return height;
 	}
 	
 	// this method tests whether a tree is height balanced
 	public static <T> boolean heightBalanced(BinaryTree<T> t) {
-	
+		return true;
 	//TO-DO
 	}
 
@@ -164,6 +180,6 @@ public class BinaryTree<T> {
 	// nodes/trees in level order
 	public static <T> void levelOrder(BinaryTree<T> t) {
 	
-	TO-DO
+	//TO-DO
 	}
 }
