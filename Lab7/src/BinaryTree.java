@@ -136,7 +136,7 @@ public class BinaryTree<T> {
 	public static <T> int findHeight(BinaryTree<T> t) {
 		int height = 0;
 		if(t == null){
-			return 0;
+			return -1;
 		}else{
 			BinaryTree<T> left = t.getLeft();
 			BinaryTree<T> right = t.getRight();
@@ -148,8 +148,20 @@ public class BinaryTree<T> {
 	
 	// this method tests whether a tree is height balanced
 	public static <T> boolean heightBalanced(BinaryTree<T> t) {
-		return true;
-	//TO-DO
+		if(t == null){
+			return false;
+		}else{
+			BinaryTree<T> left = t.getLeft();
+			BinaryTree<T> right = t.getRight();
+			//A binary tree is height balanced if, for every node in the tree,
+			// the height of its left subtree differs from the height of its right subtree by no more than one.
+			if(findHeight(left) != findHeight(right)) {
+				return false;
+			}else {
+				return true;
+			}
+	}
+
 	}
 
 	public static <T> void preorder(BinaryTree<T> t) {
@@ -179,7 +191,28 @@ public class BinaryTree<T> {
 	// this method uses an ArrayList to print the data associated with all
 	// nodes/trees in level order
 	public static <T> void levelOrder(BinaryTree<T> t) {
-	
+		ArrayList<BinaryTree<T>> q = new ArrayList<BinaryTree<T>>();
+		q.add(t);
+		while(!q.isEmpty()){
+
+			//current node will be the leftmost node in the tree level
+			BinaryTree<T> currentNode = q.get(0);
+			System.out.print(currentNode.data);
+			//after we print it we move up the queue
+			q.remove(0);
+
+			//line up next two nodes in the current level
+			if(currentNode.getLeft() != null){
+				q.add(currentNode.getLeft());
+			}
+			if(currentNode.getRight() != null){
+				q.add(currentNode.getRight());
+			}
+
+
+
+		}
+
 	//TO-DO
 	}
 }
