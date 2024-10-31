@@ -1,0 +1,55 @@
+A.attachLeft(B);
+A.attachRight(C);
+output:
+Height of the tree is: 1
+Number of nodes in the tree is: 3
+
+Inorder:	B	A	C
+Preorder:	A	B	C
+Postorder:	B	C	A
+Levelorder:	A B C
+
+And is it height balanced... Yes!
+
+
+Process finished with exit code 0
+
+A.attachLeft(B);
+A.attachRight(C);
+B.attachLeft(D);
+
+output:
+
+Height of the tree is: 2
+Number of nodes in the tree is: 4
+
+Inorder:	D	B	A	C
+Preorder:	A	B	D	C
+Postorder:	D	B	C	A
+Levelorder:	A B C D
+
+And is it height balanced... No.
+
+
+Process finished with exit code 0
+
+A.attachLeft(B);
+A.attachRight(C);
+B.attachLeft(D);
+B.attachRight(E);
+C.attachLeft(F);
+
+
+output:
+Height of the tree is: 2
+Number of nodes in the tree is: 6
+
+Inorder:	D	B	E	A	F	C
+Preorder:	A	B	D	E	C	F
+Postorder:	D	E	B	F	C	A
+Levelorder:	A B C D E F
+
+And is it height balanced... Yes!
+
+
+Process finished with exit code 0

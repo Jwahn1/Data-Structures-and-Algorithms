@@ -1,0 +1,44 @@
+input the names of the nodes you want, enter 'quit' if you want to stop
+a b c d e f g h i j k quit
+Height of the tree is: 3
+Number of nodes in the tree is: 11
+
+Inorder:	h	d	i	b	j	e	k	a	f	c	g
+Preorder:	a	b	d	h	i	e	j	k	c	f	g
+Postorder:	h	i	d	j	k	e	b	f	g	c	a
+Levelorder:	a b c d e f g h i j k
+
+And is it height balanced... No.
+
+
+Process finished with exit code 0
+
+a b quit
+Height of the tree is: 1
+Number of nodes in the tree is: 2
+
+Inorder:	b	a
+Preorder:	a	b
+Postorder:	b	a
+Levelorder:	a b
+
+And is it height balanced... No.
+
+
+Process finished with exit code 0
+
+input the names of the nodes you want, enter 'quit' if you want to stop
+a
+quit
+Height of the tree is: 0
+Number of nodes in the tree is: 1
+
+Inorder:	a
+Preorder:	a
+Postorder:	a
+Levelorder:	a
+
+And is it height balanced... Yes!
+
+
+Process finished with exit code 0

@@ -198,6 +198,7 @@ public class BinaryTree<T> {
 			//current node will be the leftmost node in the tree level
 			BinaryTree<T> currentNode = q.get(0);
 			System.out.print(currentNode.data);
+			System.out.print(" ");
 			//after we print it we move up the queue
 			q.remove(0);
 

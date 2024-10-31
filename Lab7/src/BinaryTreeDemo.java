@@ -27,10 +27,6 @@ public class BinaryTreeDemo {
 		B.attachLeft(D);
 		B.attachRight(E);
 		C.attachLeft(F);
-		C.attachRight(G);
-		G.attachRight(H);
-		G.attachLeft(I);
-		I.attachRight(J);
 
 		// test statements
 		System.out.printf("Height of the tree is: %d\n", BinaryTree.findHeight(A));
