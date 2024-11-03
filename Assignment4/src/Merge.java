@@ -1,20 +1,76 @@
 import java.io.*;
 import java.util.*;
+import java.io.FileWriter;
 public class Merge {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
 
 
         File randomNames = new File("Docs/RandomNames.txt");
-        Scanner in = new Scanner(randomNames);
+
+
+            FileWriter mergedtxt = new FileWriter("Docs/merged.txt");
+            FileWriter differencetxt = new FileWriter("Docs/difference.txt");
+            FileWriter commontxt = new FileWriter("Docs/common.txt");
+
+
+        Scanner file = new Scanner(randomNames);
+        Scanner in = new Scanner(System.in);
+
         ArrayList<String> names = new ArrayList<>();
+        OrderedList<String> names1 = new OrderedList<String>();
+        OrderedList<String> names2 = new OrderedList<String> ();
 
-        while(in.hasNextLine()){
-            names.add(in.next());
+        int n1;
+        int n2;
+
+        //transfer from file all names into arraylist
+        while(file.hasNextLine()){
+            names.add(file.next());
         }
 
-        for (int i = 0; i < names.size(); i++) {
-            System.out.println(names.get(i));
+        //create names1
+        System.out.print("please input an integer between 1000 and 1500");
+        n1 = in.nextInt();
+
+
+        for(int i  = 0 ; i < n1 ; i++){
+            //int from 0 to 2000
+            int rand_int1 = (int)(Math.random() * names.size());
+            //adds a random name to list 1
+            names1.insert(names.get(rand_int1));
         }
+
+        //create names2
+        System.out.print("please input an integer between 1000 and 1500");
+        n2 = in.nextInt();
+
+
+        for(int i  = 0 ; i < n2 ; i++){
+            //int from 0 to 2000
+            int rand_int1 = (int)(Math.random() * names.size());
+            //adds a random name to list 2
+            names2.insert(names.get(rand_int1));
+        }
+
+        // Merge the two lists
+        OrderedList<String> mergedList = merge(names1, names2);
+        for (int i = 0; i < mergedList.size(); i++) {
+           mergedtxt.write(mergedList.get(i)+ "\n");
+        }
+
+        // Find common elements between the two lists
+        OrderedList<String> commonList = common(names1, names2);
+        for (int i = 0; i < commonList.size(); i++) {
+            commontxt.write(commonList.get(i)+ "\n");
+        }
+
+
+        // Find the difference between the first list and the second
+        OrderedList<String> differenceList = difference(names1, names2);
+        for (int i = 0; i < differenceList.size(); i++) {
+            differencetxt.write(differenceList.get(i) + "\n");
+        }
+
     }
 
     //method takes two orderedLists and merges them into a third ordered list which is then returned
@@ -110,31 +166,5 @@ public class Merge {
 
         return differenceList;
     }
-    /*
 
-Method 2: Input arguments are two ordered lists; the method creates and returns a new list
-that contains the common items in list1 and list2. You would still use the two-finger walking algorithm concept with a
-small variation in the pseudocode.
-The header for this method would be:
-
-Method 3: Input arguments are two ordered lists; the method creates and returns a new list
-that contains the items in list1 but not in list2. You would still use the two-finger walking algorithm concept with a
-small variation in the pseudocode.
-The header for this method would be:
-public static <T extends Comparable<T>> OrderedList<T> difference (OrderedList<T> list1, OrderedList<T> list2)
-{
-//your code here
-}
-As an example, suppose we have the following lists:
-list1: [Amar, Boris, Charlie, Dan, Fujian, Inder, Pei, Travis]
-list2: [Alex, Betty, Charlie, Dan, Travis, Zola, Zulu]
-then the first method (merge) should return the list
-[Alex, Amar, Betty, Boris, Charlie, Dan, Fujian, Inder, Pei, Travis, Zola, Zulu]
-The second method (common) should return the list
-[Charlie, Dan, Travis]
-The third method (difference) should return the list
-[Amar, Boris, Fujian, Inder, Pei]
-As you may notice from the above example, the items can be repeated across the two lists, but they are not repeated
-within each list. Same with the result lists – items are not repeate
-     */
 }
