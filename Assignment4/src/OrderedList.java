@@ -123,6 +123,11 @@ public class OrderedList<T extends Comparable<T>>
 	{
 		return elements.remove(pos);
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "OrderedList{" +
+				"elements=" + elements +
+				'}';
+	}
 }

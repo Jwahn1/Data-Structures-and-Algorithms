@@ -1,5 +1,21 @@
+import java.io.*;
+import java.util.*;
 public class Merge {
+    public static void main(String[] args) throws FileNotFoundException {
 
+
+        File randomNames = new File("Docs/RandomNames.txt");
+        Scanner in = new Scanner(randomNames);
+        ArrayList<String> names = new ArrayList<>();
+
+        while(in.hasNextLine()){
+            names.add(in.next());
+        }
+
+        for (int i = 0; i < names.size(); i++) {
+            System.out.println(names.get(i));
+        }
+    }
 
     //method takes two orderedLists and merges them into a third ordered list which is then returned
     public static <T extends Comparable<T>> OrderedList<T> merge(OrderedList<T> list1, OrderedList<T> list2){
@@ -48,9 +64,51 @@ public class Merge {
         int f1 = 0;
         int f2 = 0;
 
-        //your code here
+        //modified two finger walking algorithm
+        while(f1 < list1.size() && f2 < list2.size()){
+            if(list1.get(f1).compareTo(list2.get(f2)) == 0) {
+                commonList.add(list1.get(f1));
+                f1++;
+                f2++;
+                //we traverse list2 for all items bigger than f1 in hopes of finding one equal to it, if f2 is smaller
+                //that means that we should move f1 up
+            } else if (list1.get(f1).compareTo(list2.get(f2)) < 0 ) {
+                f1++;
+                //else just keep traversing list2
+            } else{
+                f2++;
+            }
+
+        }
+
+
 
         return commonList;
+    }
+
+
+    public static <T extends Comparable<T>> OrderedList<T> difference (OrderedList<T> list1, OrderedList<T> list2) {
+        OrderedList<T> differenceList = new OrderedList<>();
+        int f1 = 0;
+        int f2 = 0;
+        boolean inList2 = false;
+
+
+        for (int i = 0; i < list1.size(); i++) {
+            for (int j = 0; j < list2.size(); j++) {
+                //if a single item in list2 is equal to the current list1.get(i) then we ignore list1.get(i)
+                if(list1.get(i).compareTo(list2.get(j)) == 0){
+                    inList2 = true;
+                }
+            }
+
+            if(!inList2){
+                differenceList.add(list1.get(i));
+            }
+            inList2 = false;
+        }
+
+        return differenceList;
     }
     /*
 
