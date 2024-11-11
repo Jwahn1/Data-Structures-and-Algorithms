@@ -169,26 +169,38 @@ public class Huffman {
         for (char c : inputText.toCharArray()) {
             if (c >= 'A' && c <= 'Z') {
                 encodedText.append(codes[c - 'A']);
+            //adds support for empty spaces
+            }else if(c == ' '){
+                encodedText.append(" ");
             }
         }
 
         System.out.println("Encoded Text: " + encodedText.toString());
 
-        // Step 3: Decode the encoded text using the Huffman tree
+        // Decode the encoded text using the Huffman tree
         StringBuilder decodedText = new StringBuilder();
         BinaryTree<Pair> currentNode = huffmanTree;
+
+        //in class example shows : if char == 0 move left / if char == 1 move right
         for (int i = 0; i < encodedText.length(); i++) {
-            if (encodedText.charAt(i) == '0') {
-                currentNode = currentNode.getLeft();
-            } else {
-                currentNode = currentNode.getRight();
+            //checks if there's an empty space before trying to decode
+            if(!(encodedText.charAt(i) == ' ')){
+                if (encodedText.charAt(i) == '0') {
+                    currentNode = currentNode.getLeft();
+                } else {
+                    currentNode = currentNode.getRight();
+                }
+
+                // If we reach a leaf node, output the corresponding character
+                if (currentNode.getLeft() == null && currentNode.getRight() == null) {
+                    decodedText.append(currentNode.getData().getValue());
+                    currentNode = huffmanTree;  // reset to the root
+                }
+
+            }else{
+                decodedText.append(" ");
             }
 
-            // If we reach a leaf node, output the corresponding character
-            if (currentNode.getLeft() == null && currentNode.getRight() == null) {
-                decodedText.append(currentNode.getData().getValue());
-                currentNode = huffmanTree;  // reset to the root
-            }
         }
 
         System.out.println("Decoded Text: " + decodedText.toString());
