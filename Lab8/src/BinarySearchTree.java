@@ -180,14 +180,58 @@ public class BinarySearchTree<T extends Comparable<T>>{
 		size--;
 	}
 
+	/*
+	This method should return the maximum data value stored in the binary search tree
+	(i.e., the largest integer or double, the String which is lexicographically (i.e., alphabetically) last).
+	 */
     public T findMax(){
-        //ToDO
-		return null;
+        T MAX = this.getTree().getData();
+		BinaryTree<T> current = new BinaryTree<T>();
+		current = this.getTree();
+
+		boolean edgeNode = false;
+
+		if(current.getData() != null){
+			//the right most leaf is the biggest key in the tree so just loop until we're there
+			while(!edgeNode){
+				if(current.getRight() != null){
+					current = current.getRight();
+				}else{
+					//if we're in the right most leaf then return the max
+					MAX = current.getData();
+					edgeNode = true;
+				}
+			}
+
+		}
+		return MAX;
     }
 
+	/*
+	This method should return the minimum data value stored in the binary search tree
+	(i.e., the smallest integer or double, the String which	is lexicographically first).
+	 */
     public T findMin(){
-		//ToDo
-		return null;
+		T MIN = this.getTree().getData();
+		BinaryTree<T> current = new BinaryTree<T>();
+		current = this.getTree();
+
+		boolean edgeNode = false;
+
+		if(current.getData() != null){
+			//the left most leaf is the smallest key in the tree so just loop until we're there
+			while(!edgeNode){
+				if(current.getLeft() != null){
+					current = current.getLeft();
+				}else{
+					//if we're in the left most leaf then return the min
+					MIN = current.getData();
+					edgeNode = true;
+				}
+			}
+
+		}
+		return MIN;
 
     }
 
@@ -196,7 +240,9 @@ public class BinarySearchTree<T extends Comparable<T>>{
         return recursiveSearch(this.getTree(),key);
     }
 
-
+	/*
+	This method returns a BinaryTree whose data value matches the search key
+	 */
     public BinaryTree<T> recursiveSearch(BinaryTree<T> t, T key) {
     	//ToDo
 		return null;
