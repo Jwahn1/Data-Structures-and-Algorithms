@@ -241,10 +241,37 @@ public class BinarySearchTree<T extends Comparable<T>>{
     }
 
 	/*
-	This method returns a BinaryTree whose data value matches the search key
+	This method returns a BinaryTree whose data value matches the search key, returns null if key is not found
 	 */
     public BinaryTree<T> recursiveSearch(BinaryTree<T> t, T key) {
-    	//ToDo
+
+
+		BinaryTree<T> searchLeft = null;
+		BinaryTree<T> searchRight = null;
+		//we have current node, if its the key we want to return
+		if(t.getData().compareTo(key) == 0){
+			return t;
+		}else{
+			//if not,  search left node and right node IF they are not null
+			if(t.getLeft() != null){
+				//search further left of current node
+				 searchLeft = recursiveSearch(t.getLeft(),key);
+			}
+			if(t.getRight() != null){
+				//search further right of current node
+				 searchRight = recursiveSearch(t.getRight(),key);
+			}
+
+		}
+
+		//return whichever node held the key
+		if(searchLeft != null){
+			return searchLeft;
+		}
+		if(searchRight != null){
+			return searchRight;
+		}
+		//if both are null return null (key not found)
 		return null;
 
     }
