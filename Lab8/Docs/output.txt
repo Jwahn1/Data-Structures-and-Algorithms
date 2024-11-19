@@ -1,0 +1,38 @@
+Enter positive integers to construct the BST (Enter '0' to stop):
+Enter int or '0': 1
+Enter int or '0': 2
+Enter int or '0': 3
+Enter int or '0': 4
+Enter int or '0': 5
+Enter int or '0': 6
+Enter int or '0': 7
+Enter int or '0': 8
+Enter int or '0': 9
+Enter int or '0': 0
+input system closed
+The max data value in the BST is: 9
+The min data value in the BST is: 1
+What key would you like to search for? 3
+Found!
+What key would you like to search for? 1212
+Not found!
+
+Process finished with exit code 0
+
+Enter positive integers to construct the BST (Enter '0' to stop):
+Enter int or '0': 341
+Enter int or '0': 400
+Enter int or '0': 32
+Enter int or '0': 91
+Enter int or '0': 20
+Enter int or '0': 0
+input system closed
+The max data value in the BST is: 400
+The min data value in the BST is: 20
+What key would you like to search for? 32
+Found!
+What key would you like to search for? 80888
+Not found!
+
+Process finished with exit code 0
+
