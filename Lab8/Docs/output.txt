@@ -36,3 +36,15 @@ Not found!
 
 Process finished with exit code 0
 
+Enter positive integers to construct the BST (Enter '0' to stop):
+Enter int or '0': 0
+input system closed
+The max data value in the BST is: null
+The min data value in the BST is: null
+What key would you like to search for? 12
+Not found!
+What key would you like to search for? 341
+Not found!
+
+Process finished with exit code 0
+
